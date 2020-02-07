@@ -49,6 +49,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.11.3'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     components {
