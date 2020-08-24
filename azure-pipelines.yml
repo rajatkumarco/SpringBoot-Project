@@ -23,7 +23,7 @@ stages:
         steps:
           - template: sonar.yml
           - template: build-pipeline.yml
-          parameters: 
-            enable_sonarqube_analysis: true
+          - parameters: 
+              enable_sonarqube_analysis: true
         pool:
           vmImage: 'ubuntu-latest'
