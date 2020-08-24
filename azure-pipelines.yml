@@ -21,7 +21,7 @@ stages:
     jobs:
       - job: Build
         steps:
-          - template: sonar.yaml@pipelinetemplates
-          - template: build-pipeline.yml@pipelinetemplates
+          - template: sonar.yaml
+          - template: build-pipeline.yml
         pool:
           vmImage: 'ubuntu-latest'
