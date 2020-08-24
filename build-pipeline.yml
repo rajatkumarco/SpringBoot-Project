@@ -2,6 +2,7 @@ parameters:
 - name: enable_sonarqube_analysis
   displayName: Enable the Sonarqube analysis
   default: false
+  value: $(enable_sonarqube_analysis)
 - name: publish_junit_results
   displayName: Publish the JUnit results
   default: true
