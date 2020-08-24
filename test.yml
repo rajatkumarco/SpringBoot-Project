@@ -1,2 +1,5 @@
-variables:
-  hello: 'hello'
+parameters:
+- name: use_tag
+  displayName: Use git tag as image version, if false use buildId.
+  type: boolean
+  default: true
