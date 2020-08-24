@@ -3,8 +3,6 @@ parameters:
   displayName: Enable the Sonarqube analysis
   type: boolean
   default: false
-  value: ${{Enable_SQ_Analysis}}
-  when: Enable_SQ_Analysis is defined
 
 - name: publish_junit_results
   displayName: Publish the JUnit results
