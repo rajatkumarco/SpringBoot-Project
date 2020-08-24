@@ -2,7 +2,11 @@ parameters:
 - name: enable_sonarqube_analysis
   displayName: Enable the Sonarqube analysis
   default: false
-  value: $(enable_sonarqube_analysis)
+  values: ${{Enable_SQ_Analysis}}
+  when: Enable_SQ_Analysis is defined
+  
+- fail: msg="The variable 'bar' is not defined"
+  when: bar is undefined
 - name: publish_junit_results
   displayName: Publish the JUnit results
   default: true
