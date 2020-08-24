@@ -10,6 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'Azure-SQ-Connection'
+    scannerMode: 'MSBuild'
+    projectKey: 'Trends'
+    projectName: 'Trends'
+    projectVersion: '0.0.1-SNAPSHOT'
 - task: Gradle@2
   inputs:
     workingDirectory: ''
