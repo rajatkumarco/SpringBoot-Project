@@ -21,6 +21,8 @@ stages:
     jobs:
       - job: Build
         steps:
+          parameters: 
+            enable_sonarqube_analysis: true
           - template: sonar.yml
           - template: build-pipeline.yml
         pool:
