@@ -25,5 +25,6 @@ stages:
           - template: build-pipeline.yml
             parameters:
               enable_sonarqube_analysis: true
+          - template: test.yml
         pool:
           vmImage: 'ubuntu-latest'
