@@ -21,11 +21,5 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'Azure-SQ-Connection'
-    scannerMode: 'Other'
-- task: SonarQubeAnalyze@4
-- task: SonarQubePublish@4
-  inputs:
-    pollingTimeoutSec: '300'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'build'
