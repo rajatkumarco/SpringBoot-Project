@@ -27,11 +27,12 @@ stages:
               targetType: 'inline'
               script: |
                 Write-Host "$env:BUILD_SOURCEBRANCH"
-                Write-Host "${{variables.isMaster}}"
+          - script: |
+            echo $(isMaster) # outputs True
           - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
-              enable_sonarqube_analysis: and(${{true}}, ${{variables.isMaster}}
+              enable_sonarqube_analysis: and(${{true}}, $(isMaster))
           - template: test.yml
           
         pool:
