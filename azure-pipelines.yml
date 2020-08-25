@@ -21,15 +21,16 @@ stages:
     jobs:
       - job: Build
         steps:
-          - template: sonar.yml
-          - template: build-pipeline.yml
-            parameters:
-              enable_sonarqube_analysis: true
-          - template: test.yml
           - task: PowerShell@2
             inputs:
               targetType: 'inline'
               script: |
                 Write-Host "$env:BUILD_SOURCEBRANCH"
+          - template: sonar.yml
+          - template: build-pipeline.yml
+            parameters:
+              enable_sonarqube_analysis: true
+          - template: test.yml
+          
         pool:
           vmImage: 'ubuntu-latest'
