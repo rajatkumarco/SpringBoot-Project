@@ -6,4 +6,3 @@ steps:
     projectKey: $(projectKey)
     projectName: $(projectName)
     projectVersion: '0.0.1-SNAPSHOT'
-    sonar.branch.name: master
