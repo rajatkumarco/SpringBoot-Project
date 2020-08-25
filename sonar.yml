@@ -1,8 +1,9 @@
 steps:
 - task: SonarQubePrepare@4
   inputs:
-    SonarQube: '$(SonarQube)' #'$(projectName)-SQConnection'
+    SonarQube: '$(SonarQube)'
     scannerMode: 'MSBuild'
-    projectKey: $(projectKey) #'genesis-CVservice'
+    projectKey: $(projectKey)
     projectName: $(projectName)
     projectVersion: '0.0.1-SNAPSHOT'
+    sonar.branch.name: master
