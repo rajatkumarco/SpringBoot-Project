@@ -15,8 +15,7 @@ variables:
   SonarQube: 'Azure-SQ-Connection'
   projectName: 'Trends'
   projectKey: 'Trends'
-  build:
-    sourceBranch: 'refs/heads/master'
+  build.sourceBranch: 'refs/heads/master'
   
 stages:
   - stage: Build
