@@ -31,7 +31,7 @@ stages:
           - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
-              enable_sonarqube_analysis: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+              enable_sonarqube_analysis: eq(variables['Build.SourceBranch'], 'refs/heads/master')
           - template: test.yml
           
         pool:
