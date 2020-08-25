@@ -15,7 +15,7 @@ variables:
   SonarQube: 'Azure-SQ-Connection'
   projectName: 'Trends'
   projectKey: 'Trends'
-  build.sourceBranch: 'refs/heads/master'
+  isMaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
   
 stages:
   - stage: Build
@@ -27,10 +27,11 @@ stages:
               targetType: 'inline'
               script: |
                 Write-Host "$env:BUILD_SOURCEBRANCH"
+                Write-Host "${{ISMASTER}}"
           - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
-              enable_sonarqube_analysis: true
+              enable_sonarqube_analysis: and(${{true}}, ${{isMaster}}
           - template: test.yml
           
         pool:
