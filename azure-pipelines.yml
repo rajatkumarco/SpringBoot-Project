@@ -28,7 +28,7 @@ stages:
               script: |
                 Write-Host "$env:BUILD_SOURCEBRANCH"
           - script: |
-            echo $(isMaster) # outputs True
+              echo $(isMaster)
           - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
