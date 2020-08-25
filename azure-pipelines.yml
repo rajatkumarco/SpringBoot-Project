@@ -16,7 +16,6 @@ variables:
   projectName: 'Trends'
   projectKey: 'Trends'
   
-build.sourceBranch: 'master'
 stages:
   - stage: Build
     jobs:
@@ -27,5 +26,10 @@ stages:
             parameters:
               enable_sonarqube_analysis: true
           - template: test.yml
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: |
+                Write-Host "$env:BUILD_SOURCEBRANCH"
         pool:
           vmImage: 'ubuntu-latest'
