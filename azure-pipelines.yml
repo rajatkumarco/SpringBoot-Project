@@ -30,8 +30,9 @@ stages:
               echo $(isMaster)
           - template: sonar.yml
           - template: build-pipeline.yml
-            parameters:
-              enable_sonarqube_analysis: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+            ${{ if eq(variables['Build.SourceBranchName'], 'refs/heads/master') }}:
+              parameters:
+                enable_sonarqube_analysis: true
           - template: test.yml
           
         pool:
