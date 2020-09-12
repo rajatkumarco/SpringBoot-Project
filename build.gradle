@@ -11,7 +11,7 @@ plugins {
     id 'java-library'
     id 'java'
     id "org.sonarqube" version "2.7.1"
-    id 'com.gradle.build-scan' version '2.0.2'
+    id 'com.gradle.build-scan' version '3.4.1'
     id 'org.springframework.boot' version '2.0.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 	id "org.owasp.dependencycheck" version "5.3.0"
