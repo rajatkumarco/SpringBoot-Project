@@ -23,7 +23,7 @@ stages:
         steps:
           - template: build-pipeline.yml
             parameters:
-              publishJUnitResults: false
+              publish_junit_results: false
           - template: sonar.yml
           - template: test.yml
           
