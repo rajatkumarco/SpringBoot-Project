@@ -21,5 +21,6 @@ steps:
     publishJUnitResults: ${{ parameters.publish_junit_results }}
     testResultsFiles: '**/TEST-*.xml'
     tasks: build
-    sonarQubeRunAnalysis: ${{ parameters.enable_sonarqube_analysis }}
-    sqGradlePluginVersionChoice: 'build'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'specify'
+    sonarQubeGradlePluginVersion: '2.6.1'
