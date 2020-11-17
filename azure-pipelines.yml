@@ -21,10 +21,10 @@ stages:
     jobs:
       - job: Build
         steps:
+          - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
               publish_junit_results: false
-          - template: sonar.yml
           - template: test.yml
           
         pool:
