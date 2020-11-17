@@ -21,10 +21,7 @@ stages:
     jobs:
       - job: Build
         steps:
-          - task: SonarQubePrepare@4
-            inputs:
-              SonarQube: 'Azure-SQ-Connection'
-              scannerMode: 'Other'
+          - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
               publish_junit_results: false
