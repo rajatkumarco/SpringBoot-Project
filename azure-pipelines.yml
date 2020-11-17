@@ -21,13 +21,13 @@ stages:
     jobs:
       - job: Build
         steps:
-          - template: sonar.yml
           - template: build-pipeline.yml
             parameters:
               publishJUnitResults: false
             ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
-            parameter:
-              enable_sonarqube_analysis: true
+              parameters:
+                enable_sonarqube_analysis: false
+          - template: sonar.yml
           - template: test.yml
           
         pool:
