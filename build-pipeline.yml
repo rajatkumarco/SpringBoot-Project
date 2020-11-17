@@ -23,4 +23,4 @@ steps:
     tasks: build
     sonarQubeRunAnalysis: true
     sqGradlePluginVersionChoice: 'specify'
-    sonarQubeGradlePluginVersion: '2.6.1'
+    sonarQubeGradlePluginVersion: '2.7.1'
