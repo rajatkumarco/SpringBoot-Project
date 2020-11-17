@@ -6,3 +6,4 @@ steps:
     projectKey: $(projectKey)
     projectName: $(projectName)
     projectVersion: '0.0.1-SNAPSHOT'
+- task: SonarQubeAnalyze@4
