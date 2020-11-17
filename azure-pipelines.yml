@@ -24,9 +24,6 @@ stages:
           - template: build-pipeline.yml
             parameters:
               publishJUnitResults: false
-            ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
-              parameters:
-                enable_sonarqube_analysis: false
           - template: sonar.yml
           - template: test.yml
           
