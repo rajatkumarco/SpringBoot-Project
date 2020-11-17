@@ -2,4 +2,7 @@ steps:
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: '$(SonarQube)'
-    scannerMode: 'Other'
+    scannerMode: 'MSBuild'
+    projectKey: $(projectKey)
+    projectName: $(projectName)
+    projectVersion: '0.0.1-SNAPSHOT'
